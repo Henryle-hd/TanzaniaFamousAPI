@@ -11,9 +11,13 @@
 const express = require("express");
 const famousRouter = require("../src/routers/famous");
 const queryRouter = require("./routers/query");
+const cors = require("cors");
 
 //variables
 const app = express();
+
+//enable CORS
+app.use(cors());
 
 //parse html
 app.use(express.urlencoded({ extended: false }));

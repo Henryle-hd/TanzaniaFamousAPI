@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TanzaniaFamousAPI Documentation</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">TanzaniaFamousAPI</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#endpoints">Endpoints</a></li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="#contribute">Contribute</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <aside>
+        <h2>Contents</h2>
+        <ul>
+          <li><a href="#overview" class="active">Overview</a></li>
+          <li><a href="#installation">Installation</a></li>
+          <li><a href="#usage">Usage</a></li>
+          <li><a href="#endpoints">API Endpoints</a></li>
+          <li><a href="#examples">Examples</a></li>
+        </ul>
+      </aside>
+      <main>
+        <section id="overview">
+          <h1>TanzaniaFamousAPI</h1>
+          <p>
+            An API providing information about famous Tanzanian personalities.
+          </p>
+        </section>
+        <section id="installation">
+          <h2>Installation</h2>
+          <pre><code>git clone https://github.com/yourusername/TanzaniaFamousAPI.git
+cd TanzaniaFamousAPI
+npm install</code></pre>
+        </section>
+        <section id="usage">
+          <h2>Usage</h2>
+          <p>
+            Make GET requests to the API endpoints to retrieve information about
+            famous Tanzanians.
+          </p>
+        </section>
+        <section id="endpoints">
+          <h2>API Endpoints</h2>
+          <ul>
+            <li><code>GET /api/famous</code> - Get all famous personalities</li>
+            <li>
+              <code>GET /api/famous/:id</code> - Get a specific famous
+              personality
+            </li>
+            <li>
+              <code>POST /api/famous</code> - Add a new famous personality
+            </li>
+            <li>
+              <code>PUT /api/famous/:id</code> - Update a famous personality
+            </li>
+            <li>
+              <code>DELETE /api/famous/:id</code> - Delete a famous personality
+            </li>
+            <li><code>GET /api/v1/query</code> - Query famous personalities</li>
+          </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <div class="example-container">
+            <h3>Get Famous Person by ID</h3>
+            <input
+              type="number"
+              id="famousId"
+              placeholder="Enter ID"
+              value="1"
+            />
+            <button onclick="getFamousPerson()">Test</button>
+            <pre id="result"></pre>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <p>&copy; 2024 TanzaniaFamousAPI. All rights reserved.</p>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
