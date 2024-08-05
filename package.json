@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "test": "jest ../test/index.test.js"
   },
   "keywords": [],
   "author": "Henry Dioniz",
@@ -20,6 +21,8 @@
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
     "@types/node": "^22.1.0",
-    "nodemon": "^3.1.4"
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0"
   }
 }
