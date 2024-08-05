@@ -1,6 +1,5 @@
 [build]
   command = "npm install"
-  publish = "functions"
   functions = "functions"
 
 [[redirects]]
