@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "nodemon server.js",
-    "test": "jest ../test/index.test.js"
+    "test": "supertest ../test/index.test.js"
   },
   "keywords": [],
   "author": "Henry Dioniz",

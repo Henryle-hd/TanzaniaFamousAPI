@@ -10,7 +10,7 @@ describe("TanzaniaFamousAPI", () => {
   });
 
   it("GET /api/famous/:ID should return a specific famous person", async () => {
-    const res = await request(app).get("/api/famous/1");
+    const res = await request(app).get("/api/famous/17");
     expect(res.statusCode).toBe(200);
     expect(res.body.success).toBe(true);
     expect(res.body.data).toHaveProperty("full_name");
@@ -42,7 +42,7 @@ describe("TanzaniaFamousAPI", () => {
       image_url: "https://example.com/updated.jpg",
       famous_for: "Updated reason"
     };
-    const res = await request(app).put("/api/famous/1").send(updatedInfo);
+    const res = await request(app).put("/api/famous/17").send(updatedInfo);
     expect(res.statusCode).toBe(201);
     expect(res.body.success).toBe(true);
     expect(res.body.data).toEqual(
