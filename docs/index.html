@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,10 +9,14 @@
     <nav>
       <div class="logo">TanzaniaFamousAPI</div>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#endpoints">Endpoints</a></li>
-        <li><a href="#examples">Examples</a></li>
-        <li><a href="#contribute">Contribute</a></li>
+        <li>
+          <a href="https://github.com/Henryle-hd/TanzaniaFamousAPI"
+            >Repository</a
+          >
+        </li>
+        <li><a href="https://github.com/Henryle-hd">GitHub</a></li>
+        <li><a href="https://x.com/Henrylee_hd">Twitter</a></li>
+        <li><a href="https://easyone.hashnode.dev/">Blog</a></li>
       </ul>
     </nav>
     <div class="container">
@@ -21,7 +24,6 @@
         <h2>Contents</h2>
         <ul>
           <li><a href="#overview" class="active">Overview</a></li>
-          <li><a href="#installation">Installation</a></li>
           <li><a href="#usage">Usage</a></li>
           <li><a href="#endpoints">API Endpoints</a></li>
           <li><a href="#examples">Examples</a></li>
@@ -33,12 +35,6 @@
           <p>
             An API providing information about famous Tanzanian personalities.
           </p>
-        </section>
-        <section id="installation">
-          <h2>Installation</h2>
-          <pre><code>git clone https://github.com/yourusername/TanzaniaFamousAPI.git
-cd TanzaniaFamousAPI
-npm install</code></pre>
         </section>
         <section id="usage">
           <h2>Usage</h2>
@@ -55,15 +51,6 @@ npm install</code></pre>
               <code>GET /api/famous/:id</code> - Get a specific famous
               personality
             </li>
-            <li>
-              <code>POST /api/famous</code> - Add a new famous personality
-            </li>
-            <li>
-              <code>PUT /api/famous/:id</code> - Update a famous personality
-            </li>
-            <li>
-              <code>DELETE /api/famous/:id</code> - Delete a famous personality
-            </li>
             <li><code>GET /api/v1/query</code> - Query famous personalities</li>
           </ul>
         </section>
@@ -71,20 +58,177 @@ npm install</code></pre>
           <h2>Examples</h2>
           <div class="example-container">
             <h3>Get Famous Person by ID</h3>
-            <input
-              type="number"
-              id="famousId"
-              placeholder="Enter ID"
-              value="1"
-            />
-            <button onclick="getFamousPerson()">Test</button>
-            <pre id="result"></pre>
+            <p>
+              Example URL: <code>GET https://api.example.com/api/famous/1</code>
+            </p>
+            <pre>
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "name": "Julius Nyerere",
+    "dob": "1922-04-13",
+    "description": "First President of Tanzania and African socialist leader."
+  }
+}</pre
+            >
+          </div>
+          <div class="example-container">
+            <h3>Get All Famous Personalities</h3>
+            <p>
+              Example URL: <code>GET https://api.example.com/api/famous</code>
+            </p>
+          </div>
+          <div class="example-container">
+            <h3>Query Famous Personalities</h3>
+            <p>Example URLs:</p>
+            <ul>
+              <li>
+                <code>GET https://api.example.com/api/v1/query</code>
+                <pre>
+{
+  "success": true,
+  "data": [/* All famous personalities */],
+  "total": 10,
+  "page": 1,
+  "limit": 10
+}</pre
+                >
+              </li>
+              <li>
+                <code
+                  >GET https://api.example.com/api/v1/query?search=John</code
+                >
+                <pre>
+{
+  "success": true,
+  "data": [/* Famous personalities with "John" in their name */],
+  "total": 2,
+  "page": 1,
+  "limit": 10
+}</pre
+                >
+              </li>
+              <li>
+                <code
+                  >GET https://api.example.com/api/v1/query?dob=1990-01-01</code
+                >
+                <pre>
+{
+  "success": true,
+  "data": [/* Famous personalities born on 1990-01-01 */],
+  "total": 1,
+  "page": 1,
+  "limit": 10
+}</pre
+                >
+              </li>
+              <li>
+                <code>GET https://api.example.com/api/v1/query?limit=10</code>
+                <pre>
+{
+  "success": true,
+  "data": [/* First 10 famous personalities */],
+  "total": 10,
+  "page": 1,
+  "limit": 10
+}</pre
+                >
+              </li>
+              <li>
+                <code>GET https://api.example.com/api/v1/query?page=1</code>
+                <pre>
+{
+  "success": true,
+  "data": [/* First page of famous personalities */],
+  "total": 10,
+  "page": 1,
+  "limit": 10
+}</pre
+                >
+              </li>
+              <li>
+                <code
+                  >GET
+                  https://api.example.com/api/v1/query?search=John&dob=1990-01-01</code
+                >
+                <pre>
+{
+  "success": true,
+  "data": [/* Famous personalities named John born on 1990-01-01 */],
+  "total": 1,
+  "page": 1,
+  "limit": 10
+}</pre
+                >
+              </li>
+              <li>
+                <code
+                  >GET
+                  https://api.example.com/api/v1/query?search=John&limit=5</code
+                >
+                <pre>
+{
+  "success": true,
+  "data": [/* First 5 famous personalities named John */],
+  "total": 5,
+  "page": 1,
+  "limit": 5
+}</pre
+                >
+              </li>
+              <li>
+                <code
+                  >GET
+                  https://api.example.com/api/v1/query?dob=1990-01-01&page=2</code
+                >
+                <pre>
+{
+  "success": true,
+  "data": [/* Second page of famous personalities born on 1990-01-01 */],
+  "total": 2,
+  "page": 2,
+  "limit": 10
+}</pre
+                >
+              </li>
+              <li>
+                <code
+                  >GET
+                  https://api.example.com/api/v1/query?search=John&dob=1990-01-01&limit=10&page=1</code
+                >
+                <pre>
+{
+  "success": true,
+  "data": [/* First 10 famous personalities named John born on 1990-01-01 */],
+  "total": 1,
+  "page": 1,
+  "limit": 10
+}</pre
+                >
+              </li>
+              <li>
+                <code
+                  >GET
+                  https://api.example.com/api/v1/query?search=Tanzania&limit=20&page=3</code
+                >
+                <pre>
+{
+  "success": true,
+  "data": [/* Third page of 20 famous personalities related to Tanzania */],
+  "total": 45,
+  "page": 3,
+  "limit": 20
+}</pre
+                >
+              </li>
+            </ul>
           </div>
         </section>
       </main>
     </div>
     <footer>
-      <p>&copy; 2024 TanzaniaFamousAPI. All rights reserved.</p>
+      <p>© 2024 TanzaniaFamousAPI. All rights reserved.</p>
     </footer>
     <script src="./script.js"></script>
   </body>

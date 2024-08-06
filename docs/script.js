@@ -1,17 +1,31 @@
 function getFamousPerson() {
   const id = document.getElementById("famousId").value;
   const url = `https://tanzania-famous-api.netlify.app/api/famous/${id}`;
-  const resultElement = document.getElementById("result");
+  const resultElement = document.getElementById("getByIdResult");
 
   resultElement.textContent = "Loading...";
 
   fetch(url)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then((data) => {
       resultElement.textContent = JSON.stringify(data, null, 2);
     })
     .catch((error) => {
-      resultElement.textContent = "Error: " + error.message;
+      if (
+        error.name === "TypeError" &&
+        (error.message.includes("Failed to fetch") ||
+          error.message.includes("NetworkError"))
+      ) {
+        resultElement.textContent =
+          "Network error: Please check your internet connection and try again.";
+      } else {
+        resultElement.textContent = `Error: ${error.message}`;
+      }
     });
 }
 
