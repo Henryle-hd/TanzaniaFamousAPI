@@ -59,16 +59,27 @@
           <div class="example-container">
             <h3>Get Famous Person by ID</h3>
             <p>
-              Example URL: <code>GET https://api.example.com/api/famous/1</code>
+              Example URL:
+              <a
+                href="https://tanzania-famous-api.netlify.app/api/famous/1"
+                class="endpoint-example"
+                ><code
+                  >GET
+                  https://tanzania-famous-api.netlify.app/api/famous/1</code
+                ></a
+              >
             </p>
             <pre>
 {
   "success": true,
   "data": {
     "id": 1,
-    "name": "Julius Nyerere",
-    "dob": "1922-04-13",
-    "description": "First President of Tanzania and African socialist leader."
+    "full_name": "Julius Kambarage Nyerere",
+    "nickname": "Mwalimu",
+    "date_of_birth": "1922-04-13",
+    "date_of_death": "1999-10-14",
+    "image_url": "https://aaregistry.org/wp-content/uploads/2009/09/julius-nyerere-225x300.jpg",
+    "famous_for": "First President of Tanzania and a key figure in the country's independence."
   }
 }</pre
             >
@@ -76,7 +87,14 @@
           <div class="example-container">
             <h3>Get All Famous Personalities</h3>
             <p>
-              Example URL: <code>GET https://api.example.com/api/famous</code>
+              Example URL:
+              <a
+                href="https://tanzania-famous-api.netlify.app/api/famous"
+                class="endpoint-example"
+                ><code
+                  >GET https://tanzania-famous-api.netlify.app/api/famous</code
+                ></a
+              >
             </p>
           </div>
           <div class="example-container">
@@ -84,39 +102,37 @@
             <p>Example URLs:</p>
             <ul>
               <li>
-                <code>GET https://api.example.com/api/v1/query</code>
+                <a
+                  href="https://tanzania-famous-api.netlify.app/api/v1/query"
+                  class="endpoint-example"
+                  ><code
+                    >GET
+                    https://tanzania-famous-api.netlify.app/api/v1/query</code
+                  ></a
+                >
                 <pre>
 {
   "success": true,
   "data": [/* All famous personalities */],
-  "total": 10,
+  "total": 18,
   "page": 1,
   "limit": 10
 }</pre
                 >
               </li>
               <li>
-                <code
-                  >GET https://api.example.com/api/v1/query?search=John</code
+                <a
+                  href="https://tanzania-famous-api.netlify.app/api/v1/query?full_name=John"
+                  class="endpoint-example"
+                  ><code
+                    >GET
+                    https://tanzania-famous-api.netlify.app/api/v1/query?full_name=John</code
+                  ></a
                 >
                 <pre>
 {
   "success": true,
-  "data": [/* Famous personalities with "John" in their name */],
-  "total": 2,
-  "page": 1,
-  "limit": 10
-}</pre
-                >
-              </li>
-              <li>
-                <code
-                  >GET https://api.example.com/api/v1/query?dob=1990-01-01</code
-                >
-                <pre>
-{
-  "success": true,
-  "data": [/* Famous personalities born on 1990-01-01 */],
+  "data": [/* Famous personalities with "John" in their full name */],
   "total": 1,
   "page": 1,
   "limit": 10
@@ -124,83 +140,75 @@
                 >
               </li>
               <li>
-                <code>GET https://api.example.com/api/v1/query?limit=10</code>
+                <a
+                  href="https://tanzania-famous-api.netlify.app/api/v1/query?date_of_birth=1990-03-30"
+                  class="endpoint-example"
+                  ><code
+                    >GET
+                    https://tanzania-famous-api.netlify.app/api/v1/query?date_of_birth=1990-03-30</code
+                  ></a
+                >
                 <pre>
 {
   "success": true,
-  "data": [/* First 10 famous personalities */],
-  "total": 10,
+  "data": [/* Famous personalities born on 1990-03-30 */],
+  "total": 4,
   "page": 1,
   "limit": 10
 }</pre
                 >
               </li>
               <li>
-                <code>GET https://api.example.com/api/v1/query?page=1</code>
-                <pre>
-{
-  "success": true,
-  "data": [/* First page of famous personalities */],
-  "total": 10,
-  "page": 1,
-  "limit": 10
-}</pre
-                >
-              </li>
-              <li>
-                <code
-                  >GET
-                  https://api.example.com/api/v1/query?search=John&dob=1990-01-01</code
+                <a
+                  href="https://tanzania-famous-api.netlify.app/api/v1/query?limit=5"
+                  class="endpoint-example"
+                  ><code
+                    >GET
+                    https://tanzania-famous-api.netlify.app/api/v1/query?limit=5</code
+                  ></a
                 >
                 <pre>
 {
   "success": true,
-  "data": [/* Famous personalities named John born on 1990-01-01 */],
-  "total": 1,
-  "page": 1,
-  "limit": 10
-}</pre
-                >
-              </li>
-              <li>
-                <code
-                  >GET
-                  https://api.example.com/api/v1/query?search=John&limit=5</code
-                >
-                <pre>
-{
-  "success": true,
-  "data": [/* First 5 famous personalities named John */],
-  "total": 5,
+  "data": [/* First 5 famous personalities */],
+  "total": 18,
   "page": 1,
   "limit": 5
 }</pre
                 >
               </li>
               <li>
-                <code
-                  >GET
-                  https://api.example.com/api/v1/query?dob=1990-01-01&page=2</code
+                <a
+                  href="https://tanzania-famous-api.netlify.app/api/v1/query?page=2"
+                  class="endpoint-example"
+                  ><code
+                    >GET
+                    https://tanzania-famous-api.netlify.app/api/v1/query?page=2</code
+                  ></a
                 >
                 <pre>
 {
   "success": true,
-  "data": [/* Second page of famous personalities born on 1990-01-01 */],
-  "total": 2,
+  "data": [/* Second page of famous personalities */],
+  "total": 18,
   "page": 2,
   "limit": 10
 }</pre
                 >
               </li>
               <li>
-                <code
-                  >GET
-                  https://api.example.com/api/v1/query?search=John&dob=1990-01-01&limit=10&page=1</code
+                <a
+                  href="https://tanzania-famous-api.netlify.app/api/v1/query?full_name=John&date_of_birth=1959-10-29"
+                  class="endpoint-example"
+                  ><code
+                    >GET
+                    https://tanzania-famous-api.netlify.app/api/v1/query?full_name=John&date_of_birth=1959-10-29</code
+                  ></a
                 >
                 <pre>
 {
   "success": true,
-  "data": [/* First 10 famous personalities named John born on 1990-01-01 */],
+  "data": [/* Famous personalities named John born on 1959-10-29 */],
   "total": 1,
   "page": 1,
   "limit": 10
@@ -208,16 +216,77 @@
                 >
               </li>
               <li>
-                <code
-                  >GET
-                  https://api.example.com/api/v1/query?search=Tanzania&limit=20&page=3</code
+                <a
+                  href="https://tanzania-famous-api.netlify.app/api/v1/query?full_name=Henry&limit=5"
+                  class="endpoint-example"
+                  ><code
+                    >GET
+                    https://tanzania-famous-api.netlify.app/api/v1/query?full_name=Henry&limit=5</code
+                  ></a
                 >
                 <pre>
 {
   "success": true,
-  "data": [/* Third page of 20 famous personalities related to Tanzania */],
-  "total": 45,
-  "page": 3,
+  "data": [/* First 5 famous personalities with Henry in their full name */],
+  "total": 4,
+  "page": 1,
+  "limit": 5
+}</pre
+                >
+              </li>
+              <li>
+                <a
+                  href="https://tanzania-famous-api.netlify.app/api/v1/query?date_of_birth=1990-03-30&page=2"
+                  class="endpoint-example"
+                  ><code
+                    >GET
+                    https://tanzania-famous-api.netlify.app/api/v1/query?date_of_birth=1990-03-30&page=2</code
+                  ></a
+                >
+                <pre>
+{
+  "success": true,
+  "data": [],
+  "total": 4,
+  "page": 2,
+  "limit": 10
+}</pre
+                >
+              </li>
+              <li>
+                <a
+                  href="https://tanzania-famous-api.netlify.app/api/v1/query?full_name=John&date_of_birth=1959-10-29&limit=10&page=1"
+                  class="endpoint-example"
+                  ><code
+                    >GET
+                    https://tanzania-famous-api.netlify.app/api/v1/query?full_name=John&date_of_birth=1959-10-29&limit=10&page=1</code
+                  ></a
+                >
+                <pre>
+{
+  "success": true,
+  "data": [/* Famous personalities named John born on 1959-10-29 */],
+  "total": 1,
+  "page": 1,
+  "limit": 10
+}</pre
+                >
+              </li>
+              <li>
+                <a
+                  href="https://tanzania-famous-api.netlify.app/api/v1/query?famous_for=President&limit=20&page=1"
+                  class="endpoint-example"
+                  ><code
+                    >GET
+                    https://tanzania-famous-api.netlify.app/api/v1/query?famous_for=President&limit=20&page=1</code
+                  ></a
+                >
+                <pre>
+{
+  "success": true,
+  "data": [/* Famous personalities known for being President */],
+  "total": 6,
+  "page": 1,
   "limit": 20
 }</pre
                 >

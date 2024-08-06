@@ -88,5 +88,8 @@ Example response structure:
 }
 ```
 
+#### More info
+
+- [Docs](https://tanzania-famous-api.netlify.app/)
 - [Twitter](https://x.com/Henrylee_hd)
 - [Blog](https://easyone.hashnode.dev/)

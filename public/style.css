@@ -5,6 +5,8 @@
   --secondary-bg: #1e1e1e;
   --accent-color: #00c8ff;
   --hover-color: #ff8c00;
+  --endpoint-color: #2c3e50;
+  --endpoint-hover-color: #34495e;
 }
 
 body {
@@ -242,4 +244,34 @@ footer {
   footer {
     max-width: 100%;
   }
+}
+
+.endpoint-example {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--endpoint-color);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.endpoint-example:hover {
+  background-color: var(--endpoint-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.endpoint-example code {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.endpoint-example:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
