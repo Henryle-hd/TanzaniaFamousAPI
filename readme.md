@@ -22,19 +22,19 @@ To use the API, make GET requests to the provided endpoints to retrieve informat
 
 Example request:
 
-GET https://api.example.com/api/famous/1
+GET https://tanzania-famous-api.netlify.app/api/famous/1
 
 Example response:
 
-```json
+```
 {
-  "success": true,
-  "data": {
-    "id": 1,
-    "name": "Julius Nyerere",
-    "dob": "1922-04-13",
-    "description": "First President of Tanzania and African socialist leader."
-  }
+"success": true,
+"data": {
+"id": 1,
+"name": "Julius Nyerere",
+"dob": "1922-04-13",
+"description": "First President of Tanzania and African socialist leader."
+}
 }
 ```
 
@@ -42,7 +42,7 @@ Example response:
 
 Example request:
 
-GET https://api.example.com/api/famous
+GET https://tanzania-famous-api.netlify.app/api/famous
 
 ### Query Famous Personalities
 
@@ -52,27 +52,27 @@ Example requests:
 
 1. Get all famous personalities:
 
-   GET https://api.example.com/api/v1/query
+   GET https://tanzania-famous-api.netlify.app/api/v1/query
 
 2. Search by name:
 
-   GET https://api.example.com/api/v1/query?search=John
+   GET https://tanzania-famous-api.netlify.app/api/v1/query?search=John
 
 3. Filter by date of birth:
 
-   GET https://api.example.com/api/v1/query?dob=1990-01-01
+   GET https://tanzania-famous-api.netlify.app/api/v1/query?dob=1990-01-01
 
 4. Limit results:
 
-   GET https://api.example.com/api/v1/query?limit=10
+   GET https://tanzania-famous-api.netlify.app/api/v1/query?limit=10
 
 5. Paginate results:
 
-   GET https://api.example.com/api/v1/query?page=1
+   GET https://tanzania-famous-api.netlify.app/api/v1/query?page=1
 
 6. Combine multiple parameters:
 
-   GET https://api.example.com/api/v1/query?search=John&dob=1990-01-01&limit=10&page=1
+   GET https://tanzania-famous-api.netlify.app/api/v1/query?search=John&dob=1990-01-01&limit=10&page=1
 
 Example response structure:
 
@@ -89,4 +89,4 @@ Example response structure:
 ```
 
 - [Twitter](https://x.com/Henrylee_hd)
-- [ Blog](https://easyone.hashnode.dev/)
+- [Blog](https://easyone.hashnode.dev/)

@@ -17,13 +17,11 @@ const cors = require("cors");
 const app = express();
 
 //static
-// app.use(express.static("./public"));
+
 //enable CORS
 app.use(cors());
 
-// Serve static files from the public directory
-app.use(express.static("src/public"));
-
+app.use(express.static("./public"));
 // Route to serve index.html
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
