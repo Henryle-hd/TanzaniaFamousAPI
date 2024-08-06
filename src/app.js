@@ -15,10 +15,29 @@ const cors = require("cors");
 
 //variables
 const app = express();
+
 //static
-app.use(express.static("./public"));
+// app.use(express.static("./public"));
 //enable CORS
 app.use(cors());
+
+// Serve static files from the public directory
+app.use(express.static("src/public"));
+
+// Route to serve index.html
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
+// Route to serve style.css
+app.get("/style.css", (req, res) => {
+  res.sendFile(__dirname + "/public/style.css");
+});
+
+// Route to serve script.js
+app.get("/script.js", (req, res) => {
+  res.sendFile(__dirname + "/public/script.js");
+});
 
 //parse html
 app.use(express.urlencoded({ extended: false }));
