@@ -15,7 +15,8 @@ const cors = require("cors");
 
 //variables
 const app = express();
-
+//static
+app.use(express.static("./public"));
 //enable CORS
 app.use(cors());
 
