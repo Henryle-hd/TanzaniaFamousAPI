@@ -12,7 +12,7 @@ const express = require("express");
 const famousRouter = require("../src/routers/famous");
 const queryRouter = require("./routers/query");
 const cors = require("cors");
-
+const path = require("path");
 //variables
 const app = express();
 
@@ -21,20 +21,19 @@ const app = express();
 //enable CORS
 app.use(cors());
 
-app.use(express.static("./public"));
 // Route to serve index.html
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 // Route to serve style.css
 app.get("/style.css", (req, res) => {
-  res.sendFile(__dirname + "/public/style.css");
+  res.sendFile(path.join(__dirname, "../public/style.css"));
 });
 
 // Route to serve script.js
 app.get("/script.js", (req, res) => {
-  res.sendFile(__dirname + "/public/script.js");
+  res.sendFile(path.join(__dirname, "../public/script.js"));
 });
 
 //parse html
