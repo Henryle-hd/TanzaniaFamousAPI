@@ -21,17 +21,16 @@ const app = express();
 //enable CORS
 app.use(cors());
 
-// Route to serve index.html
+app.use(express.static(path.join(__dirname, "../public")));
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
-// Route to serve style.css
 app.get("/style.css", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/style.css"));
 });
 
-// Route to serve script.js
 app.get("/script.js", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/script.js"));
 });
